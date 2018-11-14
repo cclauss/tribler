@@ -124,7 +124,7 @@ class ChannelsModifySubscriptionEndpoint(BaseChannelsEndpoint):
         """
         request.setHeader('Content-Type', 'text/json')
 
-        if self.session.config.get_chant_channel_edit():
+        if (len(self.cid) == 74):
             with db_session:
                 channel = self.session.lm.mds.ChannelMetadata.get(public_key=buffer(self.cid))
                 if not channel:
