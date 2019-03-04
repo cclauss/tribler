@@ -1,13 +1,16 @@
+from __future__ import absolute_import
+
 import base64
 import json
 import logging
+
 from twisted.web import http, resource
 from twisted.web.server import NOT_DONE_YET
 
 from Tribler.Core.DownloadConfig import DownloadStartupConfig
 from Tribler.Core.Modules.restapi.util import return_handled_exception
-from Tribler.Core.exceptions import DuplicateDownloadException
 import Tribler.Core.Utilities.json_util as json
+from Tribler.Core.exceptions import DuplicateDownloadException
 
 
 class CreateTorrentEndpoint(resource.Resource):
